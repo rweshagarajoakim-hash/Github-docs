@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QIM Clothes Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+
+    <div class="logo" aria-label="QIM Clothes Store brand logo">
+        <div class="logo-mark">
+            <span>Q</span>
+        </div>
+        <div class="logo-text">
+            <span>QIM</span>
+            <small>CLOTHES STORE</small>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-button" onclick="openCart()">
+        🛒 Cart
+        <span id="cartCount">0</span>
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+
+    <div class="brand-logo-wrap">
+        <svg class="brand-logo-svg" viewBox="0 0 900 900" role="img" aria-label="QIM Clothes Store logo">
+            <defs>
+                <linearGradient id="goldGlow" x1="0%" x2="100%" y1="0%" y2="100%">
+                    <stop offset="0%" stop-color="#f9e38b"/>
+                    <stop offset="25%" stop-color="#d4a72c"/>
+                    <stop offset="55%" stop-color="#f5d770"/>
+                    <stop offset="100%" stop-color="#b88300"/>
+                </linearGradient>
+            </defs>
+
+            <circle cx="450" cy="450" r="400" fill="#050505" stroke="url(#goldGlow)" stroke-width="18"/>
+            <circle cx="450" cy="450" r="370" fill="none" stroke="rgba(212,167,44,0.6)" stroke-width="5"/>
+
+            <path d="M245 262 L305 212 L360 270 L450 205 L540 270 L595 212 L655 262" fill="none" stroke="url(#goldGlow)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M200 318 C260 356, 318 350, 370 320 C395 305, 430 290, 450 290 C470 290, 505 305, 530 320 C582 350, 640 356, 700 318" fill="none" stroke="url(#goldGlow)" stroke-width="18" stroke-linecap="round"/>
+
+            <text x="450" y="480" text-anchor="middle" class="qim-text">QIM</text>
+
+            <text x="450" y="600" text-anchor="middle" class="brand-main-text">CLOTHES</text>
+            <text x="450" y="660" text-anchor="middle" class="brand-sub-text">STORE</text>
+            <text x="450" y="715" text-anchor="middle" class="brand-slogan-svg">Style • Quality • Affordable</text>
+
+            <g class="icon-row">
+                <g transform="translate(130,760)">
+                    <text y="0" class="mini-icon">👕</text>
+                    <text x="0" y="32" text-anchor="middle" class="mini-label">MEN</text>
+                </g>
+                <g transform="translate(250,760)">
+                    <text y="0" class="mini-icon">👗</text>
+                    <text x="0" y="32" text-anchor="middle" class="mini-label">WOMEN</text>
+                </g>
+                <g transform="translate(390,760)">
+                    <text y="0" class="mini-icon">👟</text>
+                    <text x="0" y="32" text-anchor="middle" class="mini-label">SHOES</text>
+                </g>
+                <g transform="translate(530,760)">
+                    <text y="0" class="mini-icon">🧢</text>
+                    <text x="0" y="32" text-anchor="middle" class="mini-label">CAPS</text>
+                </g>
+                <g transform="translate(670,760)">
+                    <text y="0" class="mini-icon">👜</text>
+                    <text x="0" y="32" text-anchor="middle" class="mini-label">ACCESSORIES</text>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+<section class="categories">
+
+    <h2>Shop By Category</h2>
+
+    <div class="category-container">
+
+        <button onclick="filterProducts('all')">
+            All
+        </button>
+
+        <button onclick="filterProducts('Men')">
+            Men
+        </button>
+
+        <button onclick="filterProducts('Women')">
+            Women
+        </button>
+
+        <button onclick="filterProducts('Shoes')">
+            Shoes
+        </button>
+
+        <button onclick="filterProducts('Accessories')">
+            Accessories
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+<section class="products-section" id="products">
+
+    <div class="section-title">
+
+        <div>
+            <p>OUR COLLECTION</p>
+            <h2>Featured Products</h2>
+        </div>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            onkeyup="searchProducts()"
+        >
+
+    </div>
+
+    <div class="products" id="productsContainer"></div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+
+    <div>
+
+        <p>ABOUT QIM</p>
+
+        <h2>
+            Style made simple.
+        </h2>
+
+        <p>
+            QIM Clothes Store is an online fashion store offering
+            stylish and affordable clothing. Choose your favourite
+            products, add them to your cart and order easily through
+            WhatsApp.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+
+    <h2>Contact QIM Clothes Store</h2>
+
+    <p>📱 WhatsApp: 0794997737</p>
+
+    <p>
+        Have a question about a product or your order?
+        Contact us on WhatsApp.
+    </p>
+
+    <a
+        href="https://wa.me/255794997737"
+        target="_blank"
+        class="whatsapp-btn"
+    >
+        💬 Chat on WhatsApp
+    </a>
+
+</section>
+
+
+<!-- ================= CART SIDEBAR ================= -->
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<div class="cart" id="cart">
+
+    <div class="cart-header">
+
+        <h2>Your Cart</h2>
+
+        <button onclick="closeCart()">✕</button>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total">
+
+        <span>Total</span>
+
+        <strong id="cartTotal">
+            TSh 0
+        </strong>
+
+    </div>
+
+    <button
+        class="checkout-btn"
+        onclick="openCheckout()"
+    >
+        Proceed to Checkout
+    </button>
+
+</div>
+
+
+<!-- ================= CHECKOUT MODAL ================= -->
+
+<div class="modal" id="checkoutModal">
+
+    <div class="checkout-box">
+
+        <button
+            class="close-modal"
+            onclick="closeCheckout()"
+        >
+            ✕
+        </button>
+
+        <h2>Complete Your Order</h2>
+
+        <p>
+            Enter your delivery information below.
+        </p>
+
+        <form id="checkoutForm">
+
+            <label>
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your full name"
+                required
+            >
+
+            <label>
+                Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="07XXXXXXXX"
+                required
+            >
+
+            <label>
+                Delivery Location
+            </label>
+
+            <input
+                type="text"
+                id="customerLocation"
+                placeholder="City / Area / Street"
+                required
+            >
+
+            <label>
+                Delivery Notes
+            </label>
+
+            <textarea
+                id="customerNotes"
+                placeholder="Example: Deliver near..."
+            ></textarea>
+
+            <div class="order-summary">
+
+                <h3>Order Summary</h3>
+
+                <div id="checkoutItems"></div>
+
+                <div class="summary-total">
+
+                    Total:
+                    <strong id="checkoutTotal">
+                        TSh 0
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <button
+                type="submit"
+                class="order-whatsapp"
+            >
+                📱 Order via WhatsApp
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        QIM CLOTHES STORE
+    </div>
+
+    <p>
+        Fashion • Quality • Style
+    </p>
+
+    <p>
+        © 2026 QIM Clothes Store. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
